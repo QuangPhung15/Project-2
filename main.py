@@ -18,6 +18,7 @@ prBrd(boxVals[0], boxVals[1], boxVals[2], boxVals[3], boxVals[4], boxVals[5], bo
 # Start a loop that will repeat for more times than the game will need.
 while winCheck == False:
 	# PLAYER TURN
+	print("------------------------- PLAYER TURN ------------------------------")
 	# Get the user's move and assert that it's on the board.
 	uMove = input("Please choose the box that you want to go with \n>> ")
 	while not uMove in validMove:
@@ -34,7 +35,9 @@ while winCheck == False:
 		print("You win! Congratulation!")
 	else:
 		# COMPUTER TURN
+		print("------------------------- COMPUTER TURN ------------------------------")
 		# Generate a random move by the computer.
+		sleep(1.5)
 		cMove = str(randint(1, 9))
 		while not cMove in validMove:
 			cMove = str(randint(1, 9))
