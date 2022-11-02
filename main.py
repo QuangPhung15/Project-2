@@ -5,29 +5,16 @@ from funx import *
 from time import *
 from random import *
 
-# define fuctions
-def prRow(box1, box2, box3):
-	"""prints a particular row of 3 boxes"""
-	print(" " + box1 + " | " + box2 + " | " + box3)
-
-def prBrd(box11, box12, box13, box21, box22, box23, box31, box32, box33):
-	"""prints the entire board"""
-	divider = "---+---+---"
-	# more code here
-
-def checkWin(box11, box12, box13, box21, box22, box23, box31, box32, box33):
-	"""checks to see if there's a winner, returns True if there is, False otherwise"""
-	winner = False
-	# more code here
-	return winner
-
 # 9 box variables: row#col#
+boxVals = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
 # The main code starts here.
 
 # Print the starting, empty board.
+prBrd(boxVals[0], boxVals[1], boxVals[2], boxVals[3], boxVals[4], boxVals[5], boxVals[6], boxVals[7], boxVals[8])
 
-# Start a loop that will repeat for more times than the game will need.
+# Start a for loop that will repeat for more times than the game will need.
+
 	# PLAYER TURN
 	# Get the user's move and assert that it's on the board.
 	# Change the chosen box's value to "x" if it was the blank before the user's move.
