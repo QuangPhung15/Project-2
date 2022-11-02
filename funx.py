@@ -17,4 +17,20 @@ def checkWin(box11, box12, box13, box21, box22, box23, box31, box32, box33):
 	"""checks to see if there's a winner, returns True if there is, False otherwise"""
 	winner = False
 	# more code here
+	if box11 == box12 == box13:
+		winner = True
+	elif box21 == box22 == box23:
+		winner = True
+	elif box31 == box32 == box33:
+		winner = True
+	elif box11 == box21 == box31:
+		winner = True
+	elif box12 == box22 == box32:
+		winner = True
+	elif box13 == box23 == box33:
+		winner = True
+	elif box11 == box22 == box33:
+		winner = True
+	elif box13 == box22 == box31:
+		winner = True
 	return winner

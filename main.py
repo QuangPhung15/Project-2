@@ -27,17 +27,23 @@ for i in range(20):
 	# Print the board to show the user's move.
 	prBrd(boxVals[0], boxVals[1], boxVals[2], boxVals[3], boxVals[4], boxVals[5], boxVals[6], boxVals[7], boxVals[8])
 	# Create a variable to hold the return value of checkWin().
+	winCheck = checkWin(boxVals[0], boxVals[1], boxVals[2], boxVals[3], boxVals[4], boxVals[5], boxVals[6], boxVals[7], boxVals[8])
 	# If the user has won, congratulate the player and exit the program.
-	
-	# COMPUTER TURN
-	# Generate a random move by the computer.
-	cMove = str(randint(1, 9))
-	while not cMove in validMove:
+	if winCheck == True:
+		print("You win! Congratulation!")
+	else:
+		# COMPUTER TURN
+		# Generate a random move by the computer.
 		cMove = str(randint(1, 9))
-	# Change the chosen box's value to "o" if it was blank before the computer's move.
-	boxVals[int(cMove) - 1] = "o"
-	validMove.remove(cMove)
-		# Inform the user if the computer couldn't make a valid move.
-	# Print the board to show the computer's move.
-	prBrd(boxVals[0], boxVals[1], boxVals[2], boxVals[3], boxVals[4], boxVals[5], boxVals[6], boxVals[7], boxVals[8])
-	# Reset the win variable to hold the return value of checkWin() after the computer
+		while not cMove in validMove:
+			cMove = str(randint(1, 9))
+		# Change the chosen box's value to "o" if it was blank before the computer's move.
+		boxVals[int(cMove) - 1] = "o"
+		validMove.remove(cMove)
+			# Inform the user if the computer couldn't make a valid move.
+		# Print the board to show the computer's move.
+		prBrd(boxVals[0], boxVals[1], boxVals[2], boxVals[3], boxVals[4], boxVals[5], boxVals[6], boxVals[7], boxVals[8])
+		# Reset the win variable to hold the return value of checkWin() after the computer
+		winCheck = checkWin(boxVals[0], boxVals[1], boxVals[2], boxVals[3], boxVals[4], boxVals[5], boxVals[6], boxVals[7], boxVals[8])
+		if winCheck == True:
+			print("You lose! Sorry")
