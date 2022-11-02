@@ -3,7 +3,6 @@
 # import modules
 from funx import *
 from time import *
-from random import *
 
 # 9 box variables: row#col#
 boxVals = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
@@ -18,36 +17,13 @@ prBrd(boxVals[0], boxVals[1], boxVals[2], boxVals[3], boxVals[4], boxVals[5], bo
 # Start a loop that will repeat for more times than the game will need.
 while winCheck == False:
 	# PLAYER TURN
-	print("------------------------- PLAYER TURN ------------------------------")
-	# Get the user's move and assert that it's on the board.
-	uMove = input("Please choose the box that you want to go with \n>> ")
-	while not uMove in validMove:
-		uMove = input("Please choose the box that you want to go with \n>> ")
-	# Change the chosen box's value to "x" if it was the blank before the user's move.
-	boxVals[int(uMove) - 1] = "x"
-	validMove.remove(uMove)
-	# Print the board to show the user's move.
-	prBrd(boxVals[0], boxVals[1], boxVals[2], boxVals[3], boxVals[4], boxVals[5], boxVals[6], boxVals[7], boxVals[8])
-	# Create a variable to hold the return value of checkWin().
-	winCheck = checkWin(boxVals[0], boxVals[1], boxVals[2], boxVals[3], boxVals[4], boxVals[5], boxVals[6], boxVals[7], boxVals[8])
+	winCheck = pTurn(validMove, boxVals)
 	# If the user has won, congratulate the player and exit the program.
 	if winCheck == True:
 		print("You win! Congratulation!")
 	else:
 		# COMPUTER TURN
-		print("------------------------- COMPUTER TURN ------------------------------")
-		# Generate a random move by the computer.
 		sleep(1.5)
-		cMove = str(randint(1, 9))
-		while not cMove in validMove:
-			cMove = str(randint(1, 9))
-		# Change the chosen box's value to "o" if it was blank before the computer's move.
-		boxVals[int(cMove) - 1] = "o"
-		validMove.remove(cMove)
-			# Inform the user if the computer couldn't make a valid move.
-		# Print the board to show the computer's move.
-		prBrd(boxVals[0], boxVals[1], boxVals[2], boxVals[3], boxVals[4], boxVals[5], boxVals[6], boxVals[7], boxVals[8])
-		# Reset the win variable to hold the return value of checkWin() after the computer
-		winCheck = checkWin(boxVals[0], boxVals[1], boxVals[2], boxVals[3], boxVals[4], boxVals[5], boxVals[6], boxVals[7], boxVals[8])
+		winCheck = cTurn(validMove, boxVals)
 		if winCheck == True:
 			print("You lose! Sorry")
