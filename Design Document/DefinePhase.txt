@@ -1,0 +1,12 @@
+a. The Tic-Tac-Toe program will let the user choose a box from the board that we draw by using Graphics. Then, by importing the time module, we manage to have a break between the user's and the computer's turn. From the list that we use to store players' inputs, we keep updating each turn and use the checkWin() function to declare the winner of the game.
+
+b. 
+- Functions: drawBrd(), drawX(), drawO()
+- Variables: window, circ1, circ2, poly1, poly2 (other variables are initialized in the code engine)
+
+c. 
+- drawBrd() function will draw an empty board by using 2 for loop to draw 9 squares.
+- drawX() function will draw a beautiful X by drawing 2 polygons that cross each other in the center.
+- drawO() function will draw a pretty O by drawing 2 circles with the same center and different radii.
+
+d. We have already understood all the components.
