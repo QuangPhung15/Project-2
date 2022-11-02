@@ -7,15 +7,16 @@ from random import *
 
 # 9 box variables: row#col#
 boxVals = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+validMove = [boxVals[0], boxVals[1], boxVals[2], boxVals[3], boxVals[4], boxVals[5], boxVals[6], boxVals[7], boxVals[8]]
+winCheck = False
 
 # The main code starts here.
 
 # Print the starting, empty board.
 prBrd(boxVals[0], boxVals[1], boxVals[2], boxVals[3], boxVals[4], boxVals[5], boxVals[6], boxVals[7], boxVals[8])
-validMove = [boxVals[0], boxVals[1], boxVals[2], boxVals[3], boxVals[4], boxVals[5], boxVals[6], boxVals[7], boxVals[8]]
 
 # Start a loop that will repeat for more times than the game will need.
-for i in range(20):
+while winCheck == False:
 	# PLAYER TURN
 	# Get the user's move and assert that it's on the board.
 	uMove = input("Please choose the box that you want to go with \n>> ")
