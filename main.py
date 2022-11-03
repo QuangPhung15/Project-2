@@ -21,6 +21,9 @@ while winCheck == False:
 	# If the user has won, congratulate the player and exit the program.
 	if winCheck == True:
 		print("You win! Congratulation!")
+	elif validMove == []:
+		print("Game tie! Try again!")
+		winCheck = True
 	else:
 		# COMPUTER TURN
 		sleep(1.5)
