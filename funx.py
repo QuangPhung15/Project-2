@@ -1,19 +1,14 @@
 from random import *
+from graphics import *
 
 # define fuctions
-def prRow(box1, box2, box3):
-	"""prints a particular row of 3 boxes"""
-	print(" " + box1 + " | " + box2 + " | " + box3)
-
-def prBrd(box11, box12, box13, box21, box22, box23, box31, box32, box33):
+def prBrd(width, height, win):
 	"""prints the entire board"""
-	divider = "---+---+---"
-	# call prRow() function and print divider between to draw the board
-	prRow(box11, box12, box13)
-	print(divider)
-	prRow(box21, box22, box23)
-	print(divider)
-	prRow(box31, box32, box33)
+	for i in range(3):
+		for j in range(3):
+			box = Rectangle(Point(0 + width * j, 0 + height * i), Point(0 + width * (j + 1), 0 + height * (i + 1)))
+			box.setFill("white")
+			box.draw(win)
 
 def checkWin(box11, box12, box13, box21, box22, box23, box31, box32, box33):
 	"""checks to see if there's a winner, returns True if there is, False otherwise"""
@@ -67,3 +62,4 @@ def cTurn(valMove1, bVals1):
 	# Reset the win variable to hold the return value of checkWin() after the computer
 	wiCheck = checkWin(bVals1[0], bVals1[1], bVals1[2], bVals1[3], bVals1[4], bVals1[5], bVals1[6], bVals1[7], bVals1[8])
 	return wiCheck
+
