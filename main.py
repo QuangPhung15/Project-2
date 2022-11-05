@@ -13,6 +13,8 @@ ticWin.setCoords(0, 0, 300, 300)
 
 # Print the starting, empty board.
 prBrd(100, 100, ticWin)
+drawX(50, 50, ticWin)
+drawO(150, 50, ticWin)
 
 # Start a loop that will repeat for more times than the game will need.
 	# PLAYER TURN

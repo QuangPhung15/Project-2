@@ -10,6 +10,28 @@ def prBrd(width, height, win):
 			box.setFill("white")
 			box.draw(win)
 
+def drawX(xX, xY, xWin):
+	"""draws X based on the center of the box"""
+	x1 = Polygon(Point(xX - 25, xY - 25), Point(xX - 20, xY - 30), Point(xX + 25, xY + 25), Point(xX + 20, xY + 30))
+	x2 = Polygon(Point(xX + 25, xY - 25), Point(xX + 20, xY - 30), Point(xX - 25, xY + 25), Point(xX - 20, xY + 30))
+	x1.setFill("blue")
+	x1.setOutline("blue")
+	x2.setFill("blue")
+	x2.setOutline("blue")
+	x1.draw(xWin)
+	x2.draw(xWin)
+
+def drawO(oX, oY, oWin):
+	"""draws O based on the center of the box"""
+	o1 = Circle(Point(oX, oY), 30)
+	o2 = Circle(Point(oX, oY), 24)
+	o1.setFill("red")
+	o1.setOutline("red")
+	o2.setFill("white")
+	o2.setOutline("red")
+	o1.draw(oWin)
+	o2.draw(oWin)
+	
 def checkWin(box11, box12, box13, box21, box22, box23, box31, box32, box33):
 	"""checks to see if there's a winner, returns True if there is, False otherwise"""
 	winner = False
