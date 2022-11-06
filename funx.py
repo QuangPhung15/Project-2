@@ -31,7 +31,52 @@ def drawO(oX, oY, oWin):
 	o2.setOutline("red")
 	o1.draw(oWin)
 	o2.draw(oWin)
-	
+
+def evalClick(cX, cY):
+	"""turns player's click into the box's number"""
+	if 0 < cY < 100:
+		if 0 < cX < 100:
+			return 7
+		elif 100 < cX < 200:
+			return 8
+		else:
+			return 9
+	elif 100 < cY < 200:
+		if 0 < cX < 100:
+			return 4
+		elif 100 < cX < 200:
+			return 5
+		else:
+			return 6
+	else:
+		if 0 < cX < 100:
+			return 1
+		elif 100 < cX < 200:
+			return 2
+		else:
+			return 3
+
+def evalCenter(boxNum):
+	"""turns the box's number to its center's coordinates"""
+	if boxNum == 1:
+		return 50, 250
+	elif boxNum == 2:
+		return 150, 250
+	elif boxNum == 3:
+		return 250, 250
+	elif boxNum == 4:
+		return 50, 150
+	elif boxNum == 5:
+		return 150, 150
+	elif boxNum == 6:
+		return 250, 150
+	elif boxNum == 7:
+		return 50, 50
+	elif boxNum == 8:
+		return 150, 50
+	else:
+		return 250, 50
+		
 def checkWin(box11, box12, box13, box21, box22, box23, box31, box32, box33):
 	"""checks to see if there's a winner, returns True if there is, False otherwise"""
 	winner = False
@@ -54,17 +99,23 @@ def checkWin(box11, box12, box13, box21, box22, box23, box31, box32, box33):
 		winner = True
 	return winner
 
-def pTurn(valMove, bVals):
-	print("------------------------- PLAYER TURN ------------------------------")
+def pTurn(valMove, bVals, pWin):
+	"""define player's turn"""
 	# Get the user's move and assert that it's on the board.
-	uMove = input("Please choose the box that you want to go with \n>> ")
-	while not uMove in valMove:
-		uMove = input("Please choose the box that you want to go with \n>> ")
+	pMove = pWin.getMouse()
+	pX = pMove.getX()
+	pY = pMove.getY()
+	pBox = evalClick(pX, pY)
+	while not pBox in valMove:
+		pMove = pWin.getMouse()
+		pX = pMove.getX()
+		pY = pMove.getY()
+		pBox = evalClick(pX, pY)
 	# Change the chosen box's value to "x" if it was the blank before the user's move.
-	bVals[int(uMove) - 1] = "x"
-	valMove.remove(uMove)
-	# Print the board to show the user's move.
-	prBrd(bVals[0], bVals[1], bVals[2], bVals[3], bVals[4], bVals[5], bVals[6], bVals[7], bVals[8])
+	pX, pY = evalCenter(pBox)
+	drawX(pX, pY, pWin)
+	bVals[pBox - 1] = "x"
+	valMove.remove(pBox)
 	# Create a variable to hold the return value of checkWin().
 	wCheck = checkWin(bVals[0], bVals[1], bVals[2], bVals[3], bVals[4], bVals[5], bVals[6], bVals[7], bVals[8])
 	return wCheck
@@ -85,3 +136,4 @@ def cTurn(valMove1, bVals1):
 	wiCheck = checkWin(bVals1[0], bVals1[1], bVals1[2], bVals1[3], bVals1[4], bVals1[5], bVals1[6], bVals1[7], bVals1[8])
 	return wiCheck
 
+#
