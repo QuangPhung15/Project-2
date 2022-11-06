@@ -23,6 +23,7 @@ while winCheck == False:
 	winCheck = pTurn(validMove, boxVals, ticWin)
 	# If the user has won, congratulate the player and exit the program.
 	if winCheck == True:
+		drawLine(boxVals[0], boxVals[1], boxVals[2], boxVals[3], boxVals[4], boxVals[5], boxVals[6], boxVals[7], boxVals[8], ticWin)
 		print("You win! Congratulations!")
 	elif validMove == []:
 		print("Game tie! Try again!")
@@ -32,6 +33,7 @@ while winCheck == False:
 		sleep(1)
 		winCheck = cTurn(validMove, boxVals, ticWin)
 		if winCheck == True:
+			drawLine(boxVals[0], boxVals[1], boxVals[2], boxVals[3], boxVals[4], boxVals[5], boxVals[6], boxVals[7], boxVals[8], ticWin)
 			print("You lose! Sorry")
 		
 ticWin.getMouse()

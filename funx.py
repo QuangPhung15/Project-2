@@ -32,6 +32,49 @@ def drawO(oX, oY, oWin):
 	o1.draw(oWin)
 	o2.draw(oWin)
 
+def drawLine(box11, box12, box13, box21, box22, box23, box31, box32, box33, lWin):
+	"""draw a line showing where the winning move is"""
+	if box11 == box12 == box13:
+		line = Line(Point(10, 250), Point(290, 250))
+		line.setWidth(8)
+		line.setOutline(color_rgb(84, 255, 0))
+		line.draw(lWin)
+	elif box21 == box22 == box23:
+		line = Line(Point(10, 150), Point(290, 150))
+		line.setWidth(8)
+		line.setOutline(color_rgb(84, 255, 0))
+		line.draw(lWin)
+	elif box31 == box32 == box33:
+		line = Line(Point(10, 50), Point(290, 50))
+		line.setWidth(8)
+		line.setOutline(color_rgb(84, 255, 0))
+		line.draw(lWin)
+	elif box11 == box21 == box31:
+		line = Line(Point(50, 290), Point(50, 10))
+		line.setWidth(8)
+		line.setOutline(color_rgb(84, 255, 0))
+		line.draw(lWin)
+	elif box12 == box22 == box32:
+		line = Line(Point(150, 290), Point(150, 10))
+		line.setWidth(8)
+		line.setOutline(color_rgb(84, 255, 0))
+		line.draw(lWin)
+	elif box13 == box23 == box33:
+		line = Line(Point(250, 290), Point(250, 10))
+		line.setWidth(8)
+		line.setOutline(color_rgb(84, 255, 0))
+		line.draw(lWin)
+	elif box11 == box22 == box33:
+		line = Line(Point(15, 285), Point(285, 15))
+		line.setWidth(8)
+		line.setOutline(color_rgb(84, 255, 0))
+		line.draw(lWin)
+	elif box13 == box22 == box31:
+		line = Line(Point(285, 285), Point(15, 15))
+		line.setWidth(8)
+		line.setOutline(color_rgb(84, 255, 0))
+		line.draw(lWin)
+	
 def evalClick(cX, cY):
 	"""turns player's click into the box's number"""
 	if 0 < cY < 100:
