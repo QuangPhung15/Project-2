@@ -27,12 +27,12 @@ while winCheck == False:
 	elif validMove == []:
 		print("Game tie! Try again!")
 		winCheck = True
-	# else:
-	# 	# COMPUTER TURN
-	# 	sleep(1.5)
-	# 	winCheck = cTurn(validMove, boxVals)
-	# 	if winCheck == True:
-	# 		print("You lose! Sorry")
+	else:
+		# COMPUTER TURN
+		sleep(1)
+		winCheck = cTurn(validMove, boxVals, ticWin)
+		if winCheck == True:
+			print("You lose! Sorry")
 		
 ticWin.getMouse()
 ticWin.close()

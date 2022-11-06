@@ -120,20 +120,17 @@ def pTurn(valMove, bVals, pWin):
 	wCheck = checkWin(bVals[0], bVals[1], bVals[2], bVals[3], bVals[4], bVals[5], bVals[6], bVals[7], bVals[8])
 	return wCheck
 
-def cTurn(valMove1, bVals1):
-	print("------------------------- COMPUTER TURN ------------------------------")
+def cTurn(valMove1, bVals1, cWin):
+	"""define computer's turn"""
 	# Generate a random move by the computer.
-	cMove = str(randint(1, 9))
-	while not cMove in valMove1:
-		cMove = str(randint(1, 9))
+	cBox = randint(1, 9)
+	while not cBox in valMove1:
+		cBox = randint(1, 9)
+	cX, cY = evalCenter(cBox)
+	drawO(cX, cY, cWin)
 	# Change the chosen box's value to "o" if it was blank before the computer's move.
-	bVals1[int(cMove) - 1] = "o"
-	valMove1.remove(cMove)
-		# Inform the user if the computer couldn't make a valid move.
-	# Print the board to show the computer's move.
-	prBrd(bVals1[0], bVals1[1], bVals1[2], bVals1[3], bVals1[4], bVals1[5], bVals1[6], bVals1[7], bVals1[8])
+	bVals1[cBox - 1] = "o"
+	valMove1.remove(cBox)
 	# Reset the win variable to hold the return value of checkWin() after the computer
 	wiCheck = checkWin(bVals1[0], bVals1[1], bVals1[2], bVals1[3], bVals1[4], bVals1[5], bVals1[6], bVals1[7], bVals1[8])
 	return wiCheck
-
-#
