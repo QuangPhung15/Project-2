@@ -1,0 +1,24 @@
+a. We will first import all the modules that we need, then define drawBoard(), drawX(), drawO() functions (these functions could be in another file and called when needed). Then we print out the rule of the game, and display an empty board. We will use the code engine we already have in our lab, change from text-based input, output, and checkWin() to mouse-clicked coordinates to make the connection with the graphWin.
+
+b. We will use pseudocode to present how the program will function.
+
+c. 
+# Names
+# import modules
+
+# define drawBrd() function
+	# for loop range 3
+		#for loop range 3
+			# draw rectangle
+
+# define drawX() function
+	# draw 2 polygons based on the center point of the box and fill color
+
+# define drawO() function
+	# draw 2 circles based on the center point of the box with different sizes
+
+# initialize any variable that we need
+
+# create a graphics window
+
+# code engine (change from text-based input, output, and checkWin() function to using the mouse-clicked coordinate by using getMouse() method) --> this helps to make the connection between my game's engine and a GraphWin

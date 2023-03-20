@@ -1,0 +1,16 @@
+a. The completed code is in the main.py file
+
+b. The code is completely commented
+
+c. 
+i. The program successfully fulfills the requirement of the program. Moreover, it runs without any errors. The program was designed to be user-friendly which means it is easy for the user to run, understand and use the program. We also added a While loop which allows the user to re-enter the information without running the program over again. 
+
+ii. Our greatest challenge was to figure out how to make the connection between the graphics and the text-based code engine. 
+
+iii. We figured the challenge out by ourselves and with a little help from the Internet.
+
+iv. We shared our ideas with each other and discussed our ideas to see the pros and cons, and then developed the most efficient ways.
+
+v. If we had more time, we would add the play again option, and display the winner declaration on the graphWin.
+
+vi. We can use the function of this challenge not only to create the Tic Tac Toe game but also to apply those functions to other games.

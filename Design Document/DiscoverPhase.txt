@@ -1,0 +1,7 @@
+a. The challenge is about creating a graphic-based version of the ultimate classic game Tic-TacToe. 
+
+b. We already have the engine code from our lab, know how to store the user's inputs by taking the mouse's coordinates, and know how to draw and update the board after the user chooses a box by comparing the range of the coordinates of boxes.
+
+c. We haven't figured out how to write the code as shortly as possible.
+
+d. We will consult our Professor, TA, and the Internet to find the understandings we need.
